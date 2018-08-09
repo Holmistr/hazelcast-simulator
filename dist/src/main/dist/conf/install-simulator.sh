@@ -81,6 +81,11 @@ if [ "$VENDOR" = "couchbase" ]; then
     uploadLibraryJar "rxjava-*"
 fi
 
+# hack to get couchbase working
+if [ "$VENDOR" = "mongodb" ]; then
+    uploadLibraryJar "mongodb-*"
+fi
+
 # upload remaining files
 uploadToRemoteSimulatorDir "$SIMULATOR_HOME/bin/" "bin"
 uploadToRemoteSimulatorDir "$SIMULATOR_HOME/conf/" "conf"

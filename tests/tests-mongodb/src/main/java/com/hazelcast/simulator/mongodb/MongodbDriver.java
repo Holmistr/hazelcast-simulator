@@ -23,7 +23,7 @@ import com.mongodb.client.MongoClients;
 import java.io.IOException;
 import static java.lang.String.format;
 
-public class MongoDBDriver extends VendorDriver<MongoClient> {
+public class MongodbDriver extends VendorDriver<MongoClient> {
 
     private MongoClient client;
 
