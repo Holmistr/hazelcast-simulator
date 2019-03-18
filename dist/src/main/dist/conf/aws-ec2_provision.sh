@@ -116,6 +116,7 @@ EOL
     args="$args --region $REGION"
     args="$args --count $count"
     args="$args --instance-type $INSTANCE_TYPE"
+    args="$args --block-device-mappings [{\"DeviceName\":\"/dev/xvda\",\"Ebs\":{\"VolumeSize\":36,\"DeleteOnTermination\":false}}]"
     args="$args --instance-initiated-shutdown-behavior terminate"
 
     if [ "$SUBNET_ID" = "default" ]; then

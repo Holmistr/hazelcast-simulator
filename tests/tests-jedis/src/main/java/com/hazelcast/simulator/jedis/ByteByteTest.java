@@ -30,11 +30,9 @@ public class ByteByteTest extends JedisTest {
     // properties
     public int keyCount = 1000;
     public int keyLength = 10;
-    public int valueCount = 1000;
     public int valueSize = 1000;
 
     private byte[][] keys;
-    private byte[][] values;
 
     @Setup
     public void setUp() {
@@ -45,16 +43,12 @@ public class ByteByteTest extends JedisTest {
         }
     }
 
-    @Prepare
+    @Prepare(global = true)
     public void prepare() {
         Random random = new Random();
-        values = new byte[valueCount][];
-        for (int i = 0; i < values.length; i++) {
-            values[i] = generateByteArray(random, valueSize);
-        }
 
         for (byte[] key : keys) {
-            client.set(key, values[random.nextInt(values.length)]);
+            client.set(key, generateByteArray(random, valueSize));
         }
     }
 
@@ -65,7 +59,9 @@ public class ByteByteTest extends JedisTest {
 
     @TimeStep(prob = -1)
     public byte[] get(ThreadState state) {
-        return client.get(state.randomKey());
+        byte[] output = client.get(state.randomKey());
+        System.out.println(output);
+        return output;
     }
 
     public class ThreadState extends BaseThreadState {
@@ -75,13 +71,13 @@ public class ByteByteTest extends JedisTest {
         }
 
         private byte[] randomValue() {
-            return values[randomInt(values.length)];
+            return generateByteArray(random, valueSize);
         }
     }
 
     @Teardown
     public void tearDown() {
-        client.shutdown();
+//        client.shutdown();
     }
 
 }

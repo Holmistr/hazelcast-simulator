@@ -39,7 +39,6 @@ public class ByteByteMapTest extends HazelcastTest {
 
     private IMap<Object, Object> map;
     private byte[][] keys;
-    private byte[][] values;
 
     @Setup
     public void setUp() {
@@ -51,17 +50,13 @@ public class ByteByteMapTest extends HazelcastTest {
         }
     }
 
-    @Prepare
+    @Prepare(global = true)
     public void prepare() {
         Random random = new Random();
-        values = new byte[valueCount][];
-        for (int i = 0; i < values.length; i++) {
-            values[i] = generateByteArray(random, valueSize);
-        }
 
         Streamer<Object, Object> streamer = StreamerFactory.getInstance(map);
         for (byte[] key : keys) {
-            streamer.pushEntry(key, values[random.nextInt(values.length)]);
+            streamer.pushEntry(key, generateByteArray(random, valueSize));
         }
         streamer.await();
     }
@@ -76,6 +71,11 @@ public class ByteByteMapTest extends HazelcastTest {
         return map.get(state.randomKey());
     }
 
+    @TimeStep(prob = 0.1)
+    public void set(ThreadState state) {
+        map.set(state.randomKey(), state.randomValue());
+    }
+
     public class ThreadState extends BaseThreadState {
 
         private byte[] randomKey() {
@@ -83,7 +83,7 @@ public class ByteByteMapTest extends HazelcastTest {
         }
 
         private byte[] randomValue() {
-            return values[randomInt(values.length)];
+            return generateByteArray(random, valueSize);
         }
     }
 
