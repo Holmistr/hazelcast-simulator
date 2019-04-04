@@ -57,8 +57,11 @@ public class ByteByteMapTest extends HazelcastTest {
         Streamer<Object, Object> streamer = StreamerFactory.getInstance(map);
         for (byte[] key : keys) {
             streamer.pushEntry(key, generateByteArray(random, valueSize));
+            System.out.println("Pushing entry " + key + ": " + map.size());
         }
         streamer.await();
+
+        System.out.println("Number of entries: " + map.size());
     }
 
     @TimeStep(prob = 0.1)
