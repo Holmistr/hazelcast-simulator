@@ -25,6 +25,7 @@ import com.hazelcast.simulator.test.annotations.TimeStep;
 import com.hazelcast.simulator.worker.loadsupport.Streamer;
 import com.hazelcast.simulator.worker.loadsupport.StreamerFactory;
 
+import java.nio.ByteBuffer;
 import java.util.Random;
 
 import static com.hazelcast.simulator.utils.GeneratorUtils.generateByteArray;
@@ -34,7 +35,6 @@ public class ByteByteMapTest extends HazelcastTest {
     // properties
     public int keyCount = 1000;
     public int keyLength = 10;
-    public int valueCount = 1000;
     public int valueSize = 1000;
 
     private IMap<Object, Object> map;
@@ -43,10 +43,10 @@ public class ByteByteMapTest extends HazelcastTest {
     @Setup
     public void setUp() {
         map = targetInstance.getMap(name);
-        Random random = new Random();
         keys = new byte[keyCount][];
         for (int i = 0; i < keys.length; i++) {
-            keys[i] = generateByteArray(random, keyLength);
+            byte[] keyBytes = ByteBuffer.allocate(keyLength).putInt(i).array();
+            keys[i] = keyBytes;
         }
     }
 
@@ -63,6 +63,7 @@ public class ByteByteMapTest extends HazelcastTest {
         streamer.await();
 
         System.out.println("Number of entries: " + map.size());
+        System.out.println("Number of keys: " + map.keySet().size());
     }
 
     @TimeStep(prob = 0.1)
@@ -72,12 +73,14 @@ public class ByteByteMapTest extends HazelcastTest {
 
     @TimeStep(prob = -1)
     public Object get(ThreadState state) {
-        return map.get(state.randomKey());
+        Object result =  map.get(state.randomKey());
+        return result;
     }
 
     @TimeStep(prob = 0.1)
     public void set(ThreadState state) {
-        map.set(state.randomKey(), state.randomValue());
+        Object key = state.randomKey();
+        map.set(key, state.randomValue());
     }
 
     public class ThreadState extends BaseThreadState {

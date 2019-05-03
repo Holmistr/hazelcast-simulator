@@ -52,6 +52,7 @@ public class IntByteMapTest extends HazelcastTest {
     @Setup
     public void setUp() {
         map = targetInstance.getMap(name);
+        System.out.println("Kurva, tož kaj sem: " + name + ", " + map.getName());
         keys = generateIntKeys(keyCount, keyLocality, targetInstance);
 
         if (minSize > maxSize) {
@@ -74,8 +75,10 @@ public class IntByteMapTest extends HazelcastTest {
         }
 
         Streamer<Integer, Object> streamer = StreamerFactory.getInstance(map);
+        int i = 1;
         for (int key : keys) {
             streamer.pushEntry(key, values[random.nextInt(values.length)]);
+            System.out.println("Pushing entry " + (i++) + ", key: " + key + ", size: " + map.size());
         }
         streamer.await();
     }

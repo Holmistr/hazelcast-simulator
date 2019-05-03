@@ -66,7 +66,7 @@ public class JedisDriver extends VendorDriver<JedisCluster> {
     public void startVendorInstance() throws Exception {
         Set<HostAndPort> addresses = getAddresses();
         GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
-        poolConfig.setMaxTotal(250);
+        poolConfig.setMaxTotal(500);
         System.out.println(addresses);
         this.client = new JedisCluster(addresses, DEFAULT_REDIS_TIMEOUT, poolConfig);
     }

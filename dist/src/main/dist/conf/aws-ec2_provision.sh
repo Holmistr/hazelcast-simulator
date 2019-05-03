@@ -126,7 +126,7 @@ EOL
     fi
 
     if [ "$PLACEMENT_GROUP" != "default" ]; then
-        args="$args --placement GroupName=$PLACEMENT_GROUP"
+        args="$args --placement AvailabilityZone=$AVAILABILITY_ZONE,GroupName=$PLACEMENT_GROUP"
     fi
 
 
