@@ -153,19 +153,27 @@ public abstract class VendorDriver<V> implements Closeable {
     }
 
     protected String loadWorkerScript(String workerType) {
+        String extension = ".sh";
+
+
         List<File> files = new LinkedList<File>();
         File confDir = new File(getSimulatorHome(), "conf");
 
         String vendor = properties.get("VENDOR");
 
-        files.add(new File("worker-" + vendor + "-" + workerType + ".sh").getAbsoluteFile());
-        files.add(new File("worker-" + workerType + ".sh").getAbsoluteFile());
-        files.add(new File("worker-" + vendor + ".sh").getAbsoluteFile());
-        files.add(new File("worker.sh").getAbsoluteFile());
+        if ("pythonclient".equalsIgnoreCase(workerType)) {
+            files.add(new File(confDir, "worker-python" + extension).getAbsoluteFile());
+        }
 
-        files.add(new File(confDir, "worker-" + vendor + "-" + workerType + ".sh").getAbsoluteFile());
-        files.add(new File(confDir, "worker-" + vendor + ".sh").getAbsoluteFile());
-        files.add(new File(confDir, "worker.sh").getAbsoluteFile());
+        files.add(new File("worker-" + vendor + "-" + workerType + extension).getAbsoluteFile());
+        files.add(new File("worker-" + workerType + extension).getAbsoluteFile());
+//        files.add(new File("worker-" + workerType + ".py").getAbsoluteFile());
+        files.add(new File("worker-" + vendor + extension).getAbsoluteFile());
+        files.add(new File("worker" + extension).getAbsoluteFile());
+
+        files.add(new File(confDir, "worker-" + vendor + "-" + workerType + extension).getAbsoluteFile());
+        files.add(new File(confDir, "worker-" + vendor + extension).getAbsoluteFile());
+        files.add(new File(confDir, "worker" + extension).getAbsoluteFile());
 
         for (File file : files) {
             if (file.exists()) {

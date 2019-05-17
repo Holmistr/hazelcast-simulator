@@ -102,8 +102,17 @@ public class WorkerProcessLauncher {
 
         WorkerProcess workerProcess = new WorkerProcess(workerAddress, workerDirName, workerHome);
 
-        ProcessBuilder processBuilder = new ProcessBuilder("bash", "worker.sh")
-                .directory(workerHome);
+        String workerType = parameters.getWorkerType();
+
+        ProcessBuilder processBuilder = null;
+        if ("pythonclient".equalsIgnoreCase(workerType)) {
+            copyPythonWorker(workerDirName);
+            processBuilder = new ProcessBuilder("bash", "worker-python.sh")
+                  .directory(workerHome);
+        } else {
+            processBuilder = new ProcessBuilder("bash", "worker.sh")
+                  .directory(workerHome);
+        }
 
         Map<String, String> environment = processBuilder.environment();
 
@@ -176,6 +185,31 @@ public class WorkerProcessLauncher {
             LOGGER.info("java.home=" + javaHome);
         }
         return javaHome;
+    }
+
+    // TODO: temporary hack how to put libraries of the worker there
+    private void copyPythonWorker(String workerId) {
+        File workersHome = new File(getSimulatorHome(), WORKERS_HOME_NAME);
+        String sessionId = parameters.get("SESSION_ID");
+
+        File pyWorkerScript = new File(getSimulatorHome() + "/conf/worker.py");
+
+        String copyCommand = format("cp -rfv %s %s/%s/%s/ || true",
+              pyWorkerScript,
+              workersHome,
+              sessionId,
+              workerId);
+        execute(copyCommand);
+
+        File pyWorkerLib = new File(getSimulatorHome() + "/conf/pyworker");
+
+        copyCommand = format("cp -rfv %s %s/%s/%s/ || true",
+              pyWorkerLib,
+              workersHome,
+              sessionId,
+              workerId);
+        execute(copyCommand);
+        LOGGER.info("Finished copying Python Worker libs");
     }
 
     private void copyResourcesToWorkerHome(String workerId) {

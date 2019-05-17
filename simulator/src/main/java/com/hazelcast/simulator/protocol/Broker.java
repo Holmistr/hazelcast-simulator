@@ -108,6 +108,7 @@ public class Broker implements Closeable {
             broker.getSystemUsage().getTempUsage().setLimit(USAGE_LIMIT);
             broker.getSystemUsage().getStoreUsage().setLimit(USAGE_LIMIT);
             broker.addConnector(brokerURL);
+            broker.addConnector("stomp://localhost:9001");
 
             if (username != null) {
                 AuthenticationUser user = new AuthenticationUser(username, password, "producers,consumer");
