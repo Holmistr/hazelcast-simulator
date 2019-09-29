@@ -1,0 +1,45 @@
+﻿<Properties StartupConfiguration="{93B9CBCC-08DD-4A49-A9F3-788EA9BB76AF}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test/TestContainer.cs">
+    <Files>
+      <File FileName="Protocol/Server.cs" Line="145" Column="18" />
+      <File FileName="Test/TestContainer.cs" Line="41" Column="54" />
+      <File FileName="Performance/TestPerformanceTracker.cs" Line="8" Column="16" />
+      <File FileName="Performance/PerformanceMonitor.cs" Line="27" Column="29" />
+      <File FileName="Operations/PerformanceStatsOperation.cs" Line="24" Column="10" />
+      <File FileName="Worker.cs" Line="57" Column="17" />
+      <File FileName="Protocol/SimulatorAddress.cs" Line="17" Column="50" />
+      <File FileName="Operations/CreateTestOperation.cs" Line="21" Column="43" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="csharpworker" expanded="True">
+            <Node name="csharpworker" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+                <Node name="SdkDependencies" expanded="True" />
+              </Node>
+              <Node name="Attributes" expanded="True" />
+              <Node name="Operations" expanded="True" />
+              <Node name="Performance" expanded="True" />
+              <Node name="Protocol" expanded="True" />
+              <Node name="Test" expanded="True">
+                <Node name="TestContainer.cs" selected="True" />
+              </Node>
+              <Node name="TestClasses" expanded="True">
+                <Node name="Utils" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.csharpworker PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -109,6 +109,10 @@ public class WorkerProcessLauncher {
             copyPythonWorker(workerDirName);
             processBuilder = new ProcessBuilder("bash", "worker-python.sh")
                   .directory(workerHome);
+        } else if ("csharpclient".equalsIgnoreCase(workerType)) {
+            copyCsharpWorker(workerDirName);
+            processBuilder = new ProcessBuilder("bash", "worker-csharp.sh")
+                  .directory(workerHome);
         } else {
             processBuilder = new ProcessBuilder("bash", "worker.sh")
                   .directory(workerHome);
@@ -210,6 +214,31 @@ public class WorkerProcessLauncher {
               workerId);
         execute(copyCommand);
         LOGGER.info("Finished copying Python Worker libs");
+    }
+
+    // TODO: temporary hack how to put libraries of the worker there
+    private void copyCsharpWorker(String workerId) {
+        File workersHome = new File(getSimulatorHome(), WORKERS_HOME_NAME);
+        String sessionId = parameters.get("SESSION_ID");
+
+        File csharpWorkerScript = new File(getSimulatorHome() + "/conf/worker-csharp.sh");
+
+        String copyCommand = format("cp -rfv %s %s/%s/%s/ || true",
+              csharpWorkerScript,
+              workersHome,
+              sessionId,
+              workerId);
+        execute(copyCommand);
+
+        File csharpWorkerLib = new File(getSimulatorHome() + "/conf/csharpworker");
+
+        copyCommand = format("cp -rfv %s %s/%s/%s/ || true",
+              csharpWorkerLib,
+              workersHome,
+              sessionId,
+              workerId);
+        execute(copyCommand);
+        LOGGER.info("Finished copying C# Worker libs");
     }
 
     private void copyResourcesToWorkerHome(String workerId) {

@@ -1,0 +1,110 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "csharpworker/1.0.0": {
+        "dependencies": {
+          "Apache.NMS.ActiveMQ": "1.5.1",
+          "Apache.NMS.Stomp": "1.5.4",
+          "Hazelcast.Net": "3.12.0",
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "csharpworker.dll": {}
+        }
+      },
+      "Apache.NMS/1.5.1": {
+        "runtime": {
+          "lib/net40/Apache.NMS.dll": {
+            "assemblyVersion": "1.5.1.2739",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Apache.NMS.ActiveMQ/1.5.1": {
+        "dependencies": {
+          "Apache.NMS": "1.5.1"
+        },
+        "runtime": {
+          "lib/net40/Apache.NMS.ActiveMQ.dll": {
+            "assemblyVersion": "1.5.1.2341",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Apache.NMS.Stomp/1.5.4": {
+        "dependencies": {
+          "Apache.NMS": "1.5.1"
+        },
+        "runtime": {
+          "lib/net40/Apache.NMS.Stomp.dll": {
+            "assemblyVersion": "1.5.4.3215",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Hazelcast.Net/3.12.0": {
+        "runtime": {
+          "lib/netstandard2.0/Hazelcast.Net.dll": {
+            "assemblyVersion": "3.12.0.0",
+            "fileVersion": "3.12.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "csharpworker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Apache.NMS/1.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dFTIktMcQEW4lq6xZz5oUipr9NktlTMfgmjyGPm6X8B+2TjItDGXKTJpbUYcBchwLH+m7PGqhE+YbA/iTx/AGg==",
+      "path": "apache.nms/1.5.1",
+      "hashPath": "apache.nms.1.5.1.nupkg.sha512"
+    },
+    "Apache.NMS.ActiveMQ/1.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r9I6Iccg83Klz6JsWI2bGU9E4r4PNaEpJJvVqAQY9fCOA/YMeAhopu5qD4WaZrEnfAivcSuDKujhHq5rBwg0bA==",
+      "path": "apache.nms.activemq/1.5.1",
+      "hashPath": "apache.nms.activemq.1.5.1.nupkg.sha512"
+    },
+    "Apache.NMS.Stomp/1.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qbWF33+VQw+5JNPneilOp/pndKCKJgvsD7uv8gmFvQDtWezN3q+pMWis9arC7Zh9dcXtkvalCq+KZrZ2PbqUjw==",
+      "path": "apache.nms.stomp/1.5.4",
+      "hashPath": "apache.nms.stomp.1.5.4.nupkg.sha512"
+    },
+    "Hazelcast.Net/3.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DdF8FnKD9GDaxEtOSOG5u7k9pOR1M2NXd4WqLjn8+jr9WXwttljqBRuAWyJAcpVkzmFwe0OD7G25qeuG2pmL4Q==",
+      "path": "hazelcast.net/3.12.0",
+      "hashPath": "hazelcast.net.3.12.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    }
+  }
+}

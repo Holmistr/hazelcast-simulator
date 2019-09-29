@@ -1,0 +1,10 @@
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/bin/Debug/netcoreapp2.0/csharpworker.deps.json
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/bin/Debug/netcoreapp2.0/csharpworker.runtimeconfig.json
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/bin/Debug/netcoreapp2.0/csharpworker.runtimeconfig.dev.json
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/bin/Debug/netcoreapp2.0/csharpworker.dll
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/bin/Debug/netcoreapp2.0/csharpworker.pdb
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/obj/Debug/netcoreapp2.0/csharpworker.csprojAssemblyReference.cache
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/obj/Debug/netcoreapp2.0/csharpworker.AssemblyInfoInputs.cache
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/obj/Debug/netcoreapp2.0/csharpworker.AssemblyInfo.cs
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/obj/Debug/netcoreapp2.0/csharpworker.dll
+/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/obj/Debug/netcoreapp2.0/csharpworker.pdb

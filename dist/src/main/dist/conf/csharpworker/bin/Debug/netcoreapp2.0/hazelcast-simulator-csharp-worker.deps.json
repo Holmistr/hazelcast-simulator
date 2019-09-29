@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "hazelcast-simulator-csharp-worker/1.0.0": {
+        "runtime": {
+          "hazelcast-simulator-csharp-worker.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "hazelcast-simulator-csharp-worker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

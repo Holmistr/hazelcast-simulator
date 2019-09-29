@@ -163,6 +163,8 @@ public abstract class VendorDriver<V> implements Closeable {
 
         if ("pythonclient".equalsIgnoreCase(workerType)) {
             files.add(new File(confDir, "worker-python" + extension).getAbsoluteFile());
+        } else if ("csharpclient".equalsIgnoreCase(workerType)) {
+            files.add(new File(confDir, "worker-csharp" + extension).getAbsoluteFile());
         }
 
         files.add(new File("worker-" + vendor + "-" + workerType + extension).getAbsoluteFile());

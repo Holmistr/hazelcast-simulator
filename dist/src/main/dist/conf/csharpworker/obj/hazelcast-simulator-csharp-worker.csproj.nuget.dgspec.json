@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/csharp/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker.csproj": {}
+  },
+  "projects": {
+    "/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/csharp/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/csharp/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker.csproj",
+        "projectName": "hazelcast-simulator-csharp-worker",
+        "projectPath": "/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/csharp/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker.csproj",
+        "packagesPath": "/home/jholusa/.nuget/packages/",
+        "outputPath": "/home/jholusa/Programs/simulator/hazelcast-simulator-0.11-SNAPSHOT/conf/csharpworker/csharp/hazelcast-simulator-csharp-worker/hazelcast-simulator-csharp-worker/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/jholusa/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.0": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

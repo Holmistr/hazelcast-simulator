@@ -71,6 +71,8 @@ public class HazelcastDriver extends VendorDriver<HazelcastInstance> {
             loadJavaClientWorkerParameters(params);
         } else if ("pythonclient".equals(workerType)) {
             loadPythonClientWorkerParameters(params);
+        } else if ("csharpclient".equals(workerType)) {
+            loadCsharpClientWorkerParameters(params);
         } else if ("litemember".equals(workerType)) {
             loadLiteMemberWorkerParameters(params);
         } else {
@@ -102,6 +104,12 @@ public class HazelcastDriver extends VendorDriver<HazelcastInstance> {
         params.set("JVM_OPTIONS", loadJvmOptions("CLIENT_ARGS"))
               .set("file:client-hazelcast.xml", initClientHzConfig())
               .set("file:worker-python.sh", loadWorkerScript("pythonclient"));
+    }
+
+    private void loadCsharpClientWorkerParameters(WorkerParameters params) {
+        params.set("JVM_OPTIONS", loadJvmOptions("CLIENT_ARGS"))
+              .set("file:client-hazelcast.xml", initClientHzConfig())
+              .set("file:worker-csharp.sh", loadWorkerScript("csharpclient"));
     }
 
     private String loadJvmOptions(String argsProperty) {

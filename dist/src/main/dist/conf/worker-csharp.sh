@@ -5,4 +5,9 @@ set -e
 exec > worker.out
 exec 2> worker.err
 
-python worker.py
+echo "Pokousim se nastartovat Csharp ${PWD}"
+
+cd csharpworker
+
+dotnet build
+dotnet run
