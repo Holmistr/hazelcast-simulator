@@ -1,7 +1,7 @@
 import hazelcast
 
 from int_string_map_test import IntStringMapTest
-from test_performance_tracker import TestPerformanceTracker
+from performance.test_performance_tracker import TestPerformanceTracker
 from time_step_thread import TimeStepThread
 
 

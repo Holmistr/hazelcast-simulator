@@ -1,6 +1,6 @@
 import threading
 
-from performance_monitor import PerformanceMonitor
+from performance.performance_monitor import PerformanceMonitor
 from test_container import TestContainer
 from test_context import TestContext
 
